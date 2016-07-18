@@ -1,0 +1,6 @@
+language: objective-c
+osx_image: xcode7.3
+
+script:
+  - xcodebuild -workspace BATester.xcworkspace -scheme BATester ONLY_ACTIVE_ARCH=NO
+  - xcodebuild -workspace BATester.xcworkspace -scheme BATester -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6s,OS=9.3' test
